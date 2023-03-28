@@ -12,11 +12,11 @@ https://downloads.freepascal.org/fpc/contrib/pas2js/2.2.0/
 ## open project folder on VScode
 - open terminal inside VScode
 - compile with 
-- ```./scripts/buildDev.sh````
+- ```./scripts/buildDev.sh```
 - access project on ```http://localhost:8080```
 
 # Building a release
 - open terminal inside VScode
 - compile with 
-- ```./scripts/buildDist.sh````
+- ```./scripts/buildDist.sh```
 - access project on ```dist``` folder and upload to your server
