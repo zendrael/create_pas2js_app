@@ -31,8 +31,11 @@ pas2js -Jc -Jirtl.js -Tbrowser src/main.pas -Fu"src/*" -vewhl -B
 echo "Copying JS file to dev..."
 mv src/main.js dev/
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
 echo ""
-echo "Starting local server at http://localhost:8080"
+echo "Starting local server at ${bold}http://localhost:8080${normal}"
 cd dev
 
 if command -v python3 &> /dev/null
@@ -42,7 +45,7 @@ elif command -v python3 &> /dev/null
 then
     python -m SimpleHTTPServer 8080
 else
-    echo "Local server error!!!"
+    echo "${bold}Local server error!!!${normal}"
     echo "This script requires Python to run a local server."
     echo "Python was not found."
     echo "You can upload the files to your server or modify this script."
