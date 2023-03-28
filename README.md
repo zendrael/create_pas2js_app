@@ -14,6 +14,7 @@ https://downloads.freepascal.org/fpc/contrib/pas2js/2.2.0/
 - compile with 
 - ```./scripts/buildDev.sh```
 - access project on ```http://localhost:8080```
+- check your browser console to see if the project works
 
 # Building a release
 - open terminal inside VScode
