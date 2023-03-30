@@ -5,18 +5,12 @@
 # Dev build script                                                            #
 ###############################################################################
 
-#add aliases sources (bash)
-#source ~/.bashrc
-#add aliases sources (zsh)
-#source ~/.zshrc
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    source ~/.bashrc
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    source ~/.zshrc
-elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    echo "OS not supported yet."
-    exit 0;
+#make alias available
+unamestr=$(uname)
+if [[ "$unamestr" == 'Linux' ]]; then
+   source ~/.bashrc
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   source ~/.zshrc
 fi
 
 if [ ! -d dev ]; then
