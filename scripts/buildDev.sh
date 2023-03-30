@@ -8,7 +8,7 @@
 #add aliases sources (bash)
 #source ~/.bashrc
 #add aliases sources (zsh)
-source ~/.zshrc
+#source ~/.zshrc
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     source ~/.bashrc
