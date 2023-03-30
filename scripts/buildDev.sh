@@ -15,7 +15,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     source ~/.zshrc
 elif [[ "$OSTYPE" == "freebsd"* ]]; then
-        # ...
+    echo "OS not supported yet."
+    exit 0;
 fi
 
 if [ ! -d dev ]; then
