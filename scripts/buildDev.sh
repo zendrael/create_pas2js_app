@@ -16,9 +16,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     source ~/.zshrc
 elif [[ "$OSTYPE" == "freebsd"* ]]; then
         # ...
-else
-    echo "Unknown OS, aborting..."
-    exit 0
 fi
 
 if [ ! -d dev ]; then
