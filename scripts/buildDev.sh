@@ -10,9 +10,20 @@
 #add aliases sources (zsh)
 source ~/.zshrc
 
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    source ~/.bashrc
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    source ~/.zshrc
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+        # ...
+else
+    echo "Unknown OS, aborting..."
+    exit 0
+fi
+
 if [ ! -d dev ]; then
 	mkdir dev
-	exit 1
+	#exit 1
 fi
 
 echo "Cleaning dev dir..."
