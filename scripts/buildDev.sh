@@ -10,12 +10,11 @@ OS="`uname`"
 case $OS in
   'Linux')
     echo "Running on Linux..."
-    shopt -s expand_aliases
-    source ~/.bash_aliases
+    alias pas2js='~/Downloads/pas2js-linux-2.2.0/bin/x86_64-linux/pas2js'
     ;;
   'Darwin')
     echo "Running on macOS..."
-    source ~/.zshrc
+    alias pas2js='~/Downloads/pas2js-macos-2.2.0/bin/x86_64-darwin/pas2js'
     ;;
   *) ;;
 esac
