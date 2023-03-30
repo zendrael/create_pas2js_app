@@ -6,12 +6,15 @@
 ###############################################################################
 
 #make alias available
-unamestr=$(uname)
-if [[ "$unamestr" == 'Linux' ]]; then
-   source ~/.bashrc
-elif [[ "$unamestr" == 'Darwin' ]]; then
-   source ~/.zshrc
-fi
+case "$OSTYPE" in
+#  solaris*) echo "SOLARIS" ;;
+  darwin*)  source ~/.zshrc ;; 
+  linux*)   source ~/.bashrc ;;
+#  bsd*)     echo "BSD" ;;
+#  msys*)    echo "WINDOWS" ;;
+#  cygwin*)  echo "ALSO WINDOWS" ;;
+  *)        echo "unknown: $OSTYPE" ;;
+esac
 
 if [ ! -d dev ]; then
 	mkdir dev
