@@ -6,14 +6,15 @@
 ###############################################################################
 
 #make alias available
-case "$OSTYPE" in
-#  solaris*) echo "SOLARIS" ;;
-  darwin*)  echo "MACOS" && source ~/.zshrc ;; 
-  linux*)   echo "LINUX" && source ~/.bashrc ;;
-#  bsd*)     echo "BSD" ;;
-#  msys*)    echo "WINDOWS" ;;
-#  cygwin*)  echo "ALSO WINDOWS" ;;
-  *)        echo "unknown: $OSTYPE" ;;
+OS="`uname`"
+case $OS in
+  'Linux')
+    source ~/.bashrc
+    ;;
+  'Darwin') 
+    source ~/.zshrc
+    ;;
+  *) ;;
 esac
 
 if [ ! -d dev ]; then
