@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ###############################################################################
 # buildDev.sh                                                                 #
@@ -9,9 +9,12 @@
 OS="`uname`"
 case $OS in
   'Linux')
-    source ~/.bashrc
+    echo "Running on Linux..."
+    shopt -s expand_aliases
+    source ~/.bash_aliases
     ;;
-  'Darwin') 
+  'Darwin')
+    echo "Running on macOS..."
     source ~/.zshrc
     ;;
   *) ;;

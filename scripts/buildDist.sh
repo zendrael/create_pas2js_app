@@ -1,18 +1,28 @@
-#!/bin/sh
+#!/bin/bash
 
 ###############################################################################
 # buildDist.sh                                                                #
 # Distribution build script                                                   #
 ###############################################################################
 
-#add aliases sources (bash)
-#source ~/.bashrc
-#add aliases sources (zsh)
-source ~/.zshrc
+#make alias available
+OS="`uname`"
+case $OS in
+  'Linux')
+    echo "Running on Linux..."
+    shopt -s expand_aliases
+    source ~/.bash_aliases
+    ;;
+  'Darwin')
+    echo "Running on macOS..."
+    source ~/.zshrc
+    ;;
+  *) ;;
+esac
 
 if [ ! -d dist ]; then
 	mkdir dist
-	exit 1
+	#exit 1
 fi
 
 echo "Cleaning dist dir..."

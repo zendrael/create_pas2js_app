@@ -1,22 +1,21 @@
 # Pas2JS Template/Boilerplate
 
-## Download pas2js
+## Step 1: Download pas2js
 - https://downloads.freepascal.org/fpc/contrib/pas2js/2.2.0/
 
-## on Linux (or Windows WSL or ChromeOS Linux container)
+## Step 2: On Linux (or Windows WSL or ChromeOS Linux container)
 - Unpack zip on Downloads folder
-- Open ```~/.bashc``` (with nano or vi or vim from terminal)
+- Open ```~/.bash_aliases``` (with nano or vi or vim from terminal)
 - Add alias line and save:
 - ```alias pas2js='~/Downloads/pas2js-linux-2.2.0/bin/x86_64-linux/pas2js'```
-- Type ```source ~/.bashrc```
 
-## on macOS
+## Step 2: On macOS
 - Unpack zip on Downloads folder
 - Open ```~/.zshrc``` (with nano from terminal)
 - Add alias line and save:
 - ```alias pas2js='~/Downloads/pas2js-macos-2.2.0/bin/x86_64-darwin/pas2js'```
 
-## open project folder on VScode
+## Step 3: Open project folder on VScode
 - open terminal inside VScode
 - compile with 
 - ```./scripts/buildDev.sh```
@@ -24,7 +23,7 @@
 - check your browser console to see if the project works
 - CTRL+C on VScode terminal to stop the server
 
-## Building a release
+## Step 4: Building a release
 - open terminal inside VScode
 - compile with 
 - ```./scripts/buildDist.sh```
