@@ -8,8 +8,8 @@
 #make alias available
 case "$OSTYPE" in
 #  solaris*) echo "SOLARIS" ;;
-  darwin*)  source ~/.zshrc ;; 
-  linux*)   source ~/.bashrc ;;
+  darwin*)  echo "MACOS" && source ~/.zshrc ;; 
+  linux*)   echo "LINUX" && source ~/.bashrc ;;
 #  bsd*)     echo "BSD" ;;
 #  msys*)    echo "WINDOWS" ;;
 #  cygwin*)  echo "ALSO WINDOWS" ;;
