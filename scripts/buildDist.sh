@@ -37,7 +37,7 @@ pas2js -Jc -Jirtl.js -Tbrowser src/main.pas -Fu"src/*" -O2 -B
 #(backend)using nodejs/bun as a target
 #pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -O2 -B
 
-echo "Copying JS file to dist..."
+echo "Moving JS file to dist..."
 mv src/main.js dist/
 
 echo ""
