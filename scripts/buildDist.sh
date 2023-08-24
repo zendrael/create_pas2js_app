@@ -33,9 +33,9 @@ cp -r assets/* dist/
 
 echo "Compiling to dist..."
 #(frontend) using browser as a target
-pas2js -Jc -Jirtl.js -Tbrowser src/main.pas -Fu"src/*" -O2 -B
+pas2js -Jc -Jirtl.js -Tbrowser src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -O2 -B
 #(backend)using nodejs/bun as a target
-#pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -O2 -B
+#pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -O2 -B
 
 echo "Moving JS file to dist..."
 mv src/main.js dist/

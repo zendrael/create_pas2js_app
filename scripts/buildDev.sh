@@ -33,10 +33,10 @@ cp -r assets/* dev/
 
 echo "Compiling to dev..."
 #(frontend) using browser as a target
-pas2js -Jc -Jirtl.js -Tbrowser src/main.pas -Fu"src/*" -vewhl -B -Jm -Jminclude
+pas2js -Jc -Jirtl.js -Tbrowser src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -vewhl -B -Jm -Jminclude
 
 #(backend)using nodejs/bun as a target
-#pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -vewhl -B -Jm -Jminclude
+#pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -vewhl -B -Jm -Jminclude
 
 echo "Copying JS file to dev..."
 mv src/*.js dev/
