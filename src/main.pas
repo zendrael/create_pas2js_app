@@ -3,10 +3,13 @@ program main;
 {$mode objfpc}
  
 uses
-   SysUtils, Sample;
+  SysUtils, 
+  Application;
  
+var
+  WebApplication: TApplication;
+
 begin
-   // Your code here
-   Writeln('Pas2JS working!');
-   Sample.Test();
+  // Starting main code 
+  WebApplication:= TApplication.Create;
 end.   

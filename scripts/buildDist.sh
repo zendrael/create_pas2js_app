@@ -29,7 +29,7 @@ rm -Rf dist/*
 
 echo "Copying files..."
 cp index.html dist/
-cp -r assets/* dist/
+cp -r public/* dist/
 
 echo "Compiling to dist..."
 #(frontend) using browser as a target

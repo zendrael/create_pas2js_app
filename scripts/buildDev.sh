@@ -29,7 +29,7 @@ rm -Rf dev/*
 
 echo "Copying files..."
 cp index.html dev/
-cp -r assets/* dev/
+cp -r public/* dev/
 
 echo "Compiling to dev..."
 #(frontend) using browser as a target

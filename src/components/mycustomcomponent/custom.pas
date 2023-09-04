@@ -1,4 +1,4 @@
-unit Sample;
+unit Custom;
 
 interface
 
