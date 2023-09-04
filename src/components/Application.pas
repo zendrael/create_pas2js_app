@@ -5,7 +5,9 @@ unit Application;
 interface
 
 uses
-  SysUtils, Web, JS;
+  SysUtils, Web, JS,
+  //add your components
+  Greeting, Background;
 
 type
 
@@ -28,9 +30,20 @@ begin
 end;
 
 procedure TApplication.Run;
+var
+  greeting: TGreeting;
+  bg: TBackground;
 begin
   //write your own code here!
   WriteLn('Hello from Pas2JS!');
+
+  //instantiate components
+  greeting:= TGreeting.Create;
+  bg:= TBackground.Create;
+
+  //add to the screen
+  document.body.appendChild( greeting.Get );
+  document.body.appendChild( bg.Get );
 end;
 
 destructor TApplication.Destroy;
