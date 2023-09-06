@@ -34,8 +34,14 @@ cp -r public/* dist/
 echo "Compiling to dist..."
 #(frontend) using browser as a target
 pas2js -Jc -Jirtl.js -Tbrowser src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -O2 -B
+
 #(backend)using nodejs/bun as a target
 #pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -O2 -B
+
+if [ $? -ne 0 ] then
+  echo "Compilation error! Check your source code!"
+  exit 0
+fi
 
 echo "Moving JS file to dist..."
 mv src/main.js dist/
