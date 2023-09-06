@@ -38,7 +38,7 @@ pas2js -Jc -Jirtl.js -Tbrowser src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/
 #(backend)using nodejs/bun as a target
 #pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -vewhl -B -Jm -Jminclude
 
-if [ $? -ne 0 ] then
+if [ $? -ne 0 ]; then
   echo "Compilation error! Check your source code!"
   exit 0
 fi
