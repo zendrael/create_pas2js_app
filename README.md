@@ -5,6 +5,10 @@
 
 ## Step 2: Prepare your environment
 
+### On Windows 
+- Unpack zip on __Downloads__ folder and keep the folder name
+- At the time of this version, the folder should be named ```pas2js-windows-2.2.0```
+
 ### On Linux (or Windows WSL or ChromeOS Linux container)
 - Unpack zip on __Downloads__ folder and keep the folder name
 - At the time of this version, the folder should be named ```pas2js-linux-2.2.0```
@@ -17,12 +21,11 @@
 - Clone this repo or just download it, you can change the folder name after you downloaded
 
 ## Step 4: Open project folder on VScode
-- open terminal
-- go inside the project folder we downloaded in previous step
-- call VScode with command ```code .```
+- open project folder with VSCode
 - open the terminal inside VSCode
-- and compile with ```./scripts/buildDev.sh```
-- access project on ```http://localhost:8080```
+- __on Windows__ compile dev with ```scripts\buildDev.ps1``` (you must have rights to execute PoweShell scripts)
+- __on Linux or macOS__ compile dev with ```./scripts/buildDev.sh```
+- access dev project in your browser on address ```http://localhost:8080```
 - __check your browser console to see if the project works__
 - CTRL+C on VScode terminal to stop the server
 
@@ -32,4 +35,4 @@
 - access project on ```dist``` folder and upload to your server
 
 ## Dependencies
-- In order to start the local webserver called by the dev script, you must have Python installed on your machine
+- In order to start the local webserver called by the dev script, __on Linux or macOS__, you must have Python installed on your machine
