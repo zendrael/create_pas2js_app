@@ -26,7 +26,7 @@ Write-Host "Compiling to dist..."
 pas2js -Jc -Ji"rtl.js" -Tbrowser src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -O2 -B
 
 # (backend) using nodejs/bun as a target
-# pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -vewhl -B -Jm -Jminclude
+# pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -O2 -B
 
 if ($LastExitCode -ne 0) {
   Write-Host "Compilation error! Check your source code!"
