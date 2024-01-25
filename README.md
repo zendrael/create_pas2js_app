@@ -31,7 +31,8 @@
 
 ## Building a release
 - open terminal inside VScode
-- compile with ```./scripts/buildDist.sh```
+- __on Windows__ compile with ```.\scripts\buildDist.ps1```
+- __on Linux or macOS__ compile with ```./scripts/buildDist.sh```
 - access project on ```dist``` folder and upload to your server
 
 ## Dependencies
