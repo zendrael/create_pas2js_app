@@ -1,21 +1,22 @@
 # Pas2JS Template/Boilerplate
 
 ## Step 1: Download pas2js
-- https://downloads.freepascal.org/fpc/contrib/pas2js/2.2.0/
+- https://getpas2js.freepascal.org/
+Current build __3.0.1__.
 
 ## Step 2: Prepare your environment
 
 ### On Windows 
 - Unpack zip on __Downloads__ folder and keep the folder name
-- At the time of this version, the folder should be named ```pas2js-windows-2.2.0```
+- At the time of this version, the folder should be named ```pas2js-windows-23.0.1```
 
 ### On Linux (or Windows WSL or ChromeOS Linux container)
 - Unpack zip on __Downloads__ folder and keep the folder name
-- At the time of this version, the folder should be named ```pas2js-linux-2.2.0```
+- At the time of this version, the folder should be named ```pas2js-linux-x86_64-3.0.1```
 
 ### On macOS
 - Unpack zip on __Downloads__ folder and keep the folder name
-- At the time of this version, the folder should be named ```pas2js-macos-2.2.0```
+- At the time of this version, the folder should be named ```pas2js-macos-3.0.1```
 
 ## Step 3: Clone this repo
 - Clone this repo or just download it, you can change the folder name after you downloaded
