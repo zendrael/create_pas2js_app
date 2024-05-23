@@ -10,7 +10,7 @@ OS="`uname`"
 case $OS in
   'Linux')
     echo "Running on Linux..."
-    alias pas2js='~/Downloads/pas2js-linux-x86_64-3.0.1/bin/pas2js'
+    alias pas2js='~/.local/share/applications/pas2js/bin/pas2js'
     ;;
   'Darwin')
     echo "Running on macOS..."
