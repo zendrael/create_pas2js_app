@@ -14,10 +14,10 @@ echo "Checking installation..."
 if [ ! -d $PAS2JSDIR/pas2js ]; then
   echo "Downloading..."
 
-  cd $PAS2JSDIR 
-  wget -O pas2js.zip $PAS2JSZIP
-  unzip pas2js.zip
-  rm pas2js.zip
+  cd $PAS2JSDIR && \
+  wget -O pas2js.zip $PAS2JSZIP && \
+  unzip pas2js.zip && \
+  rm pas2js.zip && \ 
   mv pas2* pas2js
 	#exit 1
 fi
