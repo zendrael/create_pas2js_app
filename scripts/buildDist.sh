@@ -1,8 +1,9 @@
 #!/usr/bin/env sh
 
 ###############################################################################
-# buildDist.sh                                                                #
-# Distribution build script                                                   #
+# file:        buildDist.sh                                                   #
+# description: distribution build script                                      #
+# source:      https://github.com/zendrael/create_pas2js_app                  #
 ###############################################################################
 
 #make alias available
@@ -12,9 +13,13 @@ case $OS in
     echo "Running on Linux..."
     alias pas2js='~/.local/share/applications/pas2js/bin/pas2js'
     ;;
+  'FreeBSD')
+    echo "Running on *BSD..."
+    alias pas2js='~/.local/share/applications/pas2js/bin/pas2js'
+    ;;
   'Darwin')
     echo "Running on macOS..."
-    alias pas2js='~/Downloads/pas2js-macos-2.2.0/bin/x86_64-darwin/pas2js'
+    alias pas2js='~/Downloads/pas2js-macos-3.0.1/bin/x86_64-darwin/pas2js'
     ;;
   *) ;;
 esac
@@ -33,10 +38,10 @@ cp -r public/* dist/
 
 echo "Compiling to dist..."
 #(frontend) using browser as a target
-pas2js -Jc -Jirtl.js -Tbrowser src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -O2 -B
+pas2js -Jc -Jirtl.js -JRjs -Tbrowser src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -O2 -B
 
 #(backend)using nodejs/bun as a target
-#pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -O2 -B
+#pas2js -Jc -Jirtl.js -JRjs -Tnodejs src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -O2 -B
 
 if [ $? -ne 0 ]; then
   echo "Compilation error! Check your source code!"
@@ -45,6 +50,8 @@ fi
 
 echo "Moving JS file to dist..."
 mv src/main.js dist/
+
+# Add here your compression / uglify / mininfy code to run on top of the main.js file
 
 echo ""
 echo "Done!"

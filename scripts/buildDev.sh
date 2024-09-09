@@ -1,8 +1,9 @@
 #!/usr/bin/env sh
 
 ###############################################################################
-# buildDev.sh                                                                 #
-# Dev build script                                                            #
+# file:        buildDev.sh                                                    #
+# description: dev build script                                               #
+# source:      https://github.com/zendrael/create_pas2js_app                  #
 ###############################################################################
 
 #make alias available
@@ -11,10 +12,17 @@ case $OS in
   'Linux')
     echo "Running on Linux..."
     alias pas2js='~/.local/share/applications/pas2js/bin/pas2js'
+    alias server='~/.local/share/applications/pas2js/bin/compileserver'
+    ;;
+  'FreeBSD')
+    echo "Running on *BSD..."
+    alias pas2js='~/.local/share/applications/pas2js/bin/pas2js'
+    alias server='~/.local/share/applications/pas2js/bin/compileserver'
     ;;
   'Darwin')
     echo "Running on macOS..."
     alias pas2js='~/Downloads/pas2js-macos-3.0.1/bin/x86_64-darwin/pas2js'
+    alias server='~/Downloads/pas2js-macos-3.0.1/bin/x86_64-darwin/compileserver'
     ;;
   *) ;;
 esac
@@ -33,12 +41,21 @@ cp -r public/* dev/
 
 echo "Compiling to dev..."
 #(frontend) using browser as a target
-pas2js -Jc -Jirtl.js -Tbrowser src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -vewhl -B -Jm -Jminclude
+pas2js -Jc -Jirtl.js -Tbrowser src/main.pas \
+  -Fu"src/*" \
+  -Fu"src/*/*" \
+  -Fu"src/*/*/*" \
+  -vewhl -B -Jm -Jminclude -JRjs
 
 #(backend)using nodejs/bun as a target
-#pas2js -Jc -Jirtl.js -Tnodejs src/main.pas -Fu"src/*" -Fu"src/*/*" -Fu"src/*/*/*" -vewhl -B -Jm -Jminclude
+#pas2js -Jc -Jirtl.js -Tnodejs src/main.pas 
+# -Fu"src/*" \
+# -Fu"src/*/*" \
+# -Fu"src/*/*/*" \
+# -vewhl -B -Jm -Jminclude -JRjs
 
 if [ $? -ne 0 ]; then
+  echo " "
   echo "Compilation error! Check your source code!"
   exit 0
 fi
@@ -50,22 +67,17 @@ mv src/*.js.map dev/
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-echo ""
-echo "Starting local server at ${bold}http://localhost:8080${normal}"
-cd dev
-
-if command -v python3 &> /dev/null
-then
-    python3 -m http.server --cgi 8080 
-elif command -v python3 &> /dev/null
-then
-    python -m SimpleHTTPServer 8080
-else
-    echo "${bold}Local server error!!!${normal}"
-    echo "This script requires Python to run a local server."
-    echo "Python was not found."
-    echo "You can upload the files to your server or modify this script."
-fi
+# REMOVE SERVER CALL IF BUILDING FOR NODEJS!!!
+# OR ADD A CALL TO "node main.js"
+echo " "
+echo " ------------------------------------------------"
+echo "| Starting local server at ${bold}http://localhost:3000${normal} |"
+echo "| (CTRL+C to quit server)                        |"
+echo " ------------------------------------------------"
+echo " "
+server -p 8080 -s -d dev
+#enable watch
+# server -p 3000 -w -c main.lpr -d dev
 
 #eof
 

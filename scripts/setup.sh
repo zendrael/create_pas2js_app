@@ -1,14 +1,18 @@
 #!/usr/bin/env sh
 
 ###############################################################################
-# setup.sh                                                                    #
-# Setup dev environment script                                                #
+# file:        setup.sh                                                       #
+# description: development environment setup script                           #
+# source:      https://github.com/zendrael/create_pas2js_app                  #
 ###############################################################################
 
 echo "Setup Pas2JS..."
 
 PAS2JSDIR="$HOME/.local/share/applications/"
 PAS2JSZIP="https://getpas2js.freepascal.org/downloads/linux/pas2js-linux-x86_64-current.zip"
+
+# macOS 
+# https://getpas2js.freepascal.org/downloads/darwin/pas2js-darwin-x86_64-current.zip
 
 echo "Checking installation..."
 if [ ! -d $PAS2JSDIR/pas2js ]; then
