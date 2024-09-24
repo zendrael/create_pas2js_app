@@ -6,6 +6,10 @@
 
 ## Step 2: Prepare your environment
 
+### Recommended VSCode extensions
+
+- OmniPascal - Open Preview
+
 ### On Linux (or Windows WSL or ChromeOS Linux container)
 
 - Access the project folder from command line
