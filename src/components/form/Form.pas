@@ -1,9 +1,9 @@
 {
-  file:        Menu.pas
+  file:        Form.pas
   description: component project source file
   source:      https://github.com/zendrael/create_pas2js_app
 }
-unit Menu;
+unit Form;
 
 {$mode objfpc}{$H+}
 
@@ -17,7 +17,7 @@ uses
 
 type
 
-  TMenu = class
+  TForm = class
   private
     { private declarations }
     myDiv: TJSElement;
@@ -30,17 +30,17 @@ type
 
 implementation
 
-constructor TMenu.Create;
+constructor TForm.Create;
 begin
   myDiv:= document.createElement('div');
 end;
 
-function TMenu.Get: TJSElement;
+function TForm.Get: TJSElement;
 var 
   objHTML : TResourceInfo;
 begin
   SetResourceSource(rsJS);
-
+  
   if not GetResourceInfo(self.UnitName, objHTML) then
     myDiv.innerhtml:='Resource '+self.UnitName+' not found !'
   else

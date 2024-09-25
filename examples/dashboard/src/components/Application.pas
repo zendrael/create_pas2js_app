@@ -1,8 +1,3 @@
-{
-  file:        Application.pas
-  description: component project source file
-  source:      https://github.com/zendrael/create_pas2js_app
-}
 unit Application;
 
 {$mode objfpc}{$H+}
@@ -12,7 +7,7 @@ interface
 uses
   SysUtils, Web, JS,
   //add your components
-  Form, Menu;
+  Greeting, Background, Menu;
 
 type
 
@@ -36,20 +31,22 @@ end;
 
 procedure TApplication.Run;
 var
-  form: TForm;
+  greeting: TGreeting;
+  bg: TBackground;
   menu: TMenu;
 begin
   //write your own code here!
-  //this will be shown in the browser's console
   WriteLn('Hello from Pas2JS!');
 
   //instantiate components
-  form:= TForm.Create;
+  greeting:= TGreeting.Create;
+  bg:= TBackground.Create;
   menu:= TMenu.Create;
 
   //add to the screen
+  // document.body.appendChild( greeting.Get );
+  // document.body.appendChild( bg.Get );
   document.body.appendChild( menu.Get );
-  document.body.appendChild( form.Get );
 end;
 
 destructor TApplication.Destroy;
