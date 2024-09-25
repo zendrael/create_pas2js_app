@@ -1,4 +1,9 @@
 <!doctype html>
+<!--
+  file:        index.html
+  description: project html source file
+  source:      https://github.com/zendrael/create_pas2js_app
+-->
 <html lang="en" data-bs-theme="auto">
 
 <head>

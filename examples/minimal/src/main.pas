@@ -8,13 +8,9 @@ program main;
 {$mode objfpc}{$H+}
  
 uses
-  SysUtils, 
-  Application;
+  JS, Classes, SysUtils, Web;
  
-var
-  WebApplication: TApplication;
-
 begin
   // Starting main code 
-  WebApplication:= TApplication.Create;
+  document.body.innerHTML +='<h1>Hello from Pas2JS!</h1>';
 end.   
