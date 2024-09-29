@@ -12,7 +12,7 @@ unit Menu;
 interface
 
 uses
-  SysUtils, Web, JS, p2jsres,
+  SysUtils, Web, JS, p2jsres, webrouter,
   Classes, types;
 
 type
@@ -21,7 +21,7 @@ type
   private
     { private declarations }
     myDiv: TJSElement;
-
+    procedure HandleMenuItemClick;
   public
     { public declarations }
     constructor Create;
@@ -46,7 +46,14 @@ begin
   else
     myDiv.innerhtml:= window.atob(objHTML.Data);
   
+  // document.getElementById('menuProducts').addEventListener('click', @HandleMenuItemClick);
+
   Result:= myDiv;
+end;
+
+procedure TMenu.HandleMenuItemClick;
+begin
+  Router.Push('products');
 end;
 
 end.

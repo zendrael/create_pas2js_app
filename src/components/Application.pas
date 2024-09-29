@@ -10,7 +10,7 @@ unit Application;
 interface
 
 uses
-  SysUtils, Web, JS,
+  SysUtils, classes, Web, JS, webrouter,
   //add your components
   Form, Menu;
 
@@ -19,7 +19,8 @@ type
   TApplication = class
   private
     { private declarations }
-    
+    procedure RegisterRoutes;
+    procedure HandleRoutes(URl : String; aRoute : TRoute; Params: TStrings);
   public
     { public declarations }
     constructor Create;
@@ -34,6 +35,23 @@ begin
   Run;
 end;
 
+procedure TApplication.RegisterRoutes;
+begin
+  Router.InitHistory(hkHash);
+  //if default route, you can pass true as 3rd param
+  Router.RegisterRoute('form/:ID', @HandleRoutes, true);
+end;
+
+procedure TApplication.HandleRoutes(URl : String; aRoute : TRoute; Params: TStrings);
+var
+  s : string;
+begin
+  S:=Params.Values['ID'];
+  document.body.innerHTML:='';
+  // TDemoForm.Create(StrToIntDef(S,1),True);
+  WriteLn(StrToIntDef(S,1));
+end; 
+
 procedure TApplication.Run;
 var
   form: TForm;
@@ -42,6 +60,10 @@ begin
   //write your own code here!
   //this will be shown in the browser's console
   WriteLn('Hello from Pas2JS!');
+
+  //Setup routes
+  RegisterRoutes;
+  Router.Push('form/1');
 
   //instantiate components
   form:= TForm.Create;
