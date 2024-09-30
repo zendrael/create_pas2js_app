@@ -19,6 +19,7 @@ type
   TApplication = class
   private
     { private declarations }
+    myDiv: TJSElement;
     procedure RegisterRoutes;
     procedure HandleRoutes(URl : String; aRoute : TRoute; Params: TStrings);
   public
@@ -32,25 +33,11 @@ implementation
 
 constructor TApplication.Create;
 begin
+  myDiv := document.createElement('div');
+  myDiv.id := 'formContainer';
   Run;
 end;
 
-procedure TApplication.RegisterRoutes;
-begin
-  Router.InitHistory(hkHash);
-  //if default route, you can pass true as 3rd param
-  Router.RegisterRoute('form/:ID', @HandleRoutes, true);
-end;
-
-procedure TApplication.HandleRoutes(URl : String; aRoute : TRoute; Params: TStrings);
-var
-  s : string;
-begin
-  S:=Params.Values['ID'];
-  document.body.innerHTML:='';
-  // TDemoForm.Create(StrToIntDef(S,1),True);
-  WriteLn(StrToIntDef(S,1));
-end; 
 
 procedure TApplication.Run;
 var
@@ -63,7 +50,8 @@ begin
 
   //Setup routes
   RegisterRoutes;
-  Router.Push('form/1');
+  // Router.Push('form/1');
+  // Router.Push('clients');
 
   //instantiate components
   form:= TForm.Create;
@@ -71,8 +59,31 @@ begin
 
   //add to the screen
   document.body.appendChild( menu.Get );
-  document.body.appendChild( form.Get );
+  myDiv.appendChild( form.Get );
+  document.body.appendChild( myDiv );
 end;
+
+procedure TApplication.RegisterRoutes;
+begin
+  Router.InitHistory(hkHash);
+  //if default route, you can pass true as 3rd param
+  // Router.RegisterRoute('/', @HandleRoutes, false);
+  // Router.RegisterRoute('form/:ID', @HandleRoutes, true);
+  Router.RegisterRoute('clients', @HandleRoutes, false);
+end;
+
+procedure TApplication.HandleRoutes(URl : String; aRoute : TRoute; Params: TStrings);
+var
+  s : string;
+begin
+  // s:=Params.Values['ID'];
+  // document.body.innerHTML:='';
+  myDiv.innerHTML := '';
+  myDiv.innerHTML := aRoute.URLPattern;
+  // TDemoForm.Create(StrToIntDef(S,1),True);
+  // WriteLn(StrToIntDef(S,1));
+  WriteLn('Passando aqui:'+aRoute.URLPattern);
+end; 
 
 destructor TApplication.Destroy;
 begin

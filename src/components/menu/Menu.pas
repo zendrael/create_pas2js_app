@@ -47,13 +47,14 @@ begin
     myDiv.innerhtml:= window.atob(objHTML.Data);
   
   // document.getElementById('menuProducts').addEventListener('click', @HandleMenuItemClick);
+  myDiv.querySelector('#clients').addEventListener('click', @HandleMenuItemClick);
 
   Result:= myDiv;
 end;
 
 procedure TMenu.HandleMenuItemClick;
 begin
-  Router.Push('products');
+  Router.Push('clients');
 end;
 
 end.
