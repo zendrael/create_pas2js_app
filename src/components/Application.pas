@@ -70,19 +70,20 @@ begin
   // Router.RegisterRoute('/', @HandleRoutes, false);
   // Router.RegisterRoute('form/:ID', @HandleRoutes, true);
   Router.RegisterRoute('clients', @HandleRoutes, false);
+  Router.RegisterRoute('products', @HandleRoutes, false);
+  Router.RegisterRoute('inventory', @HandleRoutes, false);
+  Router.RegisterRoute('logout', @HandleRoutes, false);
 end;
 
 procedure TApplication.HandleRoutes(URl : String; aRoute : TRoute; Params: TStrings);
 var
-  s : string;
+  s: string;
 begin
   // s:=Params.Values['ID'];
-  // document.body.innerHTML:='';
   myDiv.innerHTML := '';
   myDiv.innerHTML := aRoute.URLPattern;
   // TDemoForm.Create(StrToIntDef(S,1),True);
   // WriteLn(StrToIntDef(S,1));
-  WriteLn('Passando aqui:'+aRoute.URLPattern);
 end; 
 
 destructor TApplication.Destroy;

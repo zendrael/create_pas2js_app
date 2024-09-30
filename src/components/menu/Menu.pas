@@ -21,7 +21,7 @@ type
   private
     { private declarations }
     myDiv: TJSElement;
-    procedure HandleMenuItemClick;
+    procedure HandleMenuItemClick(e: TJSEvent);
   public
     { public declarations }
     constructor Create;
@@ -46,15 +46,18 @@ begin
   else
     myDiv.innerhtml:= window.atob(objHTML.Data);
   
-  // document.getElementById('menuProducts').addEventListener('click', @HandleMenuItemClick);
+  //connect menu events
   myDiv.querySelector('#clients').addEventListener('click', @HandleMenuItemClick);
+  myDiv.querySelector('#products').addEventListener('click', @HandleMenuItemClick);
+  myDiv.querySelector('#inventory').addEventListener('click', @HandleMenuItemClick);
+  myDiv.querySelector('#logout').addEventListener('click', @HandleMenuItemClick);
 
   Result:= myDiv;
 end;
 
-procedure TMenu.HandleMenuItemClick;
+procedure TMenu.HandleMenuItemClick(e: TJSEvent);
 begin
-  Router.Push('clients');
+  Router.Push(e.currentTargetElement.id);
 end;
 
 end.
