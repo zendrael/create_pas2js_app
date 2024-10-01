@@ -1,0 +1,137 @@
+<div class="container px-5 my-5">
+  <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+    <div class="row">
+      <div class="mb-3 col-7">
+        <label class="form-label" for="newField">New Field</label>
+        <input
+          class="form-control"
+          id="newField"
+          type="text"
+          placeholder="New Field"
+          data-sb-validations="required"
+        />
+        <div class="invalid-feedback" data-sb-feedback="newField:required">
+          New Field is required.
+        </div>
+      </div>
+      <div class="mb-3 col-5">
+        <label class="form-label" for="newField2">New Field 2</label>
+        <input
+          class="form-control"
+          id="newField2"
+          type="text"
+          placeholder="New Field 2"
+          data-sb-validations="required"
+        />
+        <div class="invalid-feedback" data-sb-feedback="newField2:required">
+          New Field 2 is required.
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="newField8">New Field 8</label>
+      <input
+        class="form-control"
+        id="newField8"
+        type="text"
+        placeholder="New Field 8"
+        data-sb-validations="required"
+      />
+      <div class="invalid-feedback" data-sb-feedback="newField8:required">
+        New Field 8 is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="message">Message</label>
+      <textarea
+        class="form-control"
+        id="message"
+        type="text"
+        placeholder="Message"
+        style="height: 10rem"
+        data-sb-validations="required"
+      ></textarea>
+      <div class="invalid-feedback" data-sb-feedback="message:required">
+        Message is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label d-block">New Field 2</label>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          id="optionA"
+          type="radio"
+          name="newField2"
+          data-sb-validations=""
+        />
+        <label class="form-check-label" for="optionA">option A</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          id="optionB"
+          type="radio"
+          name="newField2"
+          data-sb-validations=""
+        />
+        <label class="form-check-label" for="optionB">option B</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          id="optionC"
+          type="radio"
+          name="newField2"
+          data-sb-validations=""
+        />
+        <label class="form-check-label" for="optionC">option C</label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="newField4">New Field 4</label>
+      <select class="form-select" id="newField4" aria-label="New Field 4">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="newField5">New Field 5</label>
+      <input
+        class="form-control"
+        id="newField5"
+        type="text"
+        placeholder="New Field 5"
+        data-sb-validations="required"
+      />
+      <div class="invalid-feedback" data-sb-feedback="newField5:required">
+        New Field 5 is required.
+      </div>
+    </div>
+    <div class="d-none" id="submitSuccessMessage">
+      <div class="text-center mb-3">
+        <div class="fw-bolder">Form submission successful!</div>
+        <p>To activate this form, sign up at</p>
+        <a href="https://startbootstrap.com/solution/contact-forms"
+          >https://startbootstrap.com/solution/contact-forms</a
+        >
+      </div>
+    </div>
+    <div class="d-none" id="submitErrorMessage">
+      <div class="text-center text-danger mb-3">Error sending message!</div>
+    </div>
+    <div class="d-grid">
+      <button
+        class="btn btn-primary btn-lg disabled"
+        id="submitButton"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

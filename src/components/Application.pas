@@ -12,7 +12,7 @@ interface
 uses
   SysUtils, classes, Web, JS, webrouter,
   //add your components
-  Form, Menu;
+  Home, Menu;
 
 type
 
@@ -38,10 +38,9 @@ begin
   Run;
 end;
 
-
 procedure TApplication.Run;
 var
-  form: TForm;
+  home: THome;
   menu: TMenu;
 begin
   //write your own code here!
@@ -50,16 +49,14 @@ begin
 
   //Setup routes
   RegisterRoutes;
-  // Router.Push('form/1');
-  // Router.Push('clients');
 
   //instantiate components
-  form:= TForm.Create;
+  home:= THome.Create;
   menu:= TMenu.Create;
 
   //add to the screen
   document.body.appendChild( menu.Get );
-  myDiv.appendChild( form.Get );
+  myDiv.appendChild( home.Get );
   document.body.appendChild( myDiv );
 end;
 

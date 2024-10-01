@@ -22,6 +22,7 @@ type
     { private declarations }
     myDiv: TJSElement;
     procedure HandleMenuItemClick(e: TJSEvent);
+    procedure HighlightMenuItem(id: string);
   public
     { public declarations }
     constructor Create;
@@ -58,6 +59,23 @@ end;
 procedure TMenu.HandleMenuItemClick(e: TJSEvent);
 begin
   Router.Push(e.currentTargetElement.id);
+  HighlightMenuItem(e.currentTargetElement.id);
+end;
+
+procedure TMenu.HighlightMenuItem(id: string);
+var
+
+  procedure removeClass(currentValue : TJSNode; currentIndex: NativeInt; list : TJSNodeList);
+  begin
+    TJSElement(currentValue).classList.remove('active');
+  end;
+
+begin
+  //remove active state from all menu items
+  myDiv.querySelectorAll('.nav-link').forEach(@removeClass);
+
+  //set current clicked menu active
+  myDiv.querySelector('#'+id).classList.add('active'); 
 end;
 
 end.
