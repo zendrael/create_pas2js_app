@@ -1,9 +1,9 @@
 {
-  file:        Form.pas
+  file:        Clients.pas
   description: component project source file
   source:      https://github.com/zendrael/create_pas2js_app
 }
-unit Form;
+unit Clients;
 
 {$mode objfpc}{$H+}
 
@@ -17,7 +17,7 @@ uses
 
 type
 
-  TForm = class
+  TClients = class
   private
     { private declarations }
     myDiv: TJSElement;
@@ -30,12 +30,12 @@ type
 
 implementation
 
-constructor TForm.Create;
+constructor TClients.Create;
 begin
   myDiv:= document.createElement('div');
 end;
 
-function TForm.Get: TJSElement;
+function TClients.Get: TJSElement;
 var 
   objHTML : TResourceInfo;
 begin

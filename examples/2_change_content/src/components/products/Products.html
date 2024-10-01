@@ -1,0 +1,62 @@
+<div class="container px-5 my-5">
+  <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+    <div class="row">
+      <div class="mb-3 col-7">
+        <label class="form-label" for="newField">Product name</label>
+        <input
+          class="form-control"
+          id="newField"
+          type="text"
+          placeholder="New Field"
+          data-sb-validations="required"
+        />
+        <div class="invalid-feedback" data-sb-feedback="newField:required">
+          New Field is required.
+        </div>
+      </div>
+      <div class="mb-3 col-5">
+        <label class="form-label" for="newField2">Product Etc...</label>
+        <input
+          class="form-control"
+          id="newField2"
+          type="text"
+          placeholder="New Field 2"
+          data-sb-validations="required"
+        />
+        <div class="invalid-feedback" data-sb-feedback="newField2:required">
+          New Field 2 is required.
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="newField8">New Field 8</label>
+      <input
+        class="form-control"
+        id="newField8"
+        type="text"
+        placeholder="New Field 8"
+        data-sb-validations="required"
+      />
+      <div class="invalid-feedback" data-sb-feedback="newField8:required">
+        New Field 8 is required.
+      </div>
+    </div>
+    <div class="d-none" id="submitSuccessMessage">
+      <div class="text-center mb-3">
+        <div class="fw-bolder">Form submission successful!</div>
+      </div>
+    </div>
+    <div class="d-none" id="submitErrorMessage">
+      <div class="text-center text-danger mb-3">Error sending message!</div>
+    </div>
+    <div class="d-grid">
+      <button
+        class="btn btn-primary btn-lg disabled"
+        id="submitButton"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

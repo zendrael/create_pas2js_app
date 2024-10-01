@@ -12,7 +12,7 @@ interface
 uses
   SysUtils, classes, Web, JS, webrouter,
   //add your components
-  Home, Menu;
+  Home, Menu, Clients, Products, Inventory;
 
 type
 
@@ -74,13 +74,39 @@ end;
 
 procedure TApplication.HandleRoutes(URl : String; aRoute : TRoute; Params: TStrings);
 var
-  s: string;
+  clients: TClients;
+  products: TProducts;
+  inventory: TInventory;
+  logout: THome;
 begin
   // s:=Params.Values['ID'];
   myDiv.innerHTML := '';
-  myDiv.innerHTML := aRoute.URLPattern;
-  // TDemoForm.Create(StrToIntDef(S,1),True);
-  // WriteLn(StrToIntDef(S,1));
+  
+  case (URL) of
+    'clients' : begin
+        clients:= TClients.Create;
+        myDiv.appendChild( clients.Get );
+        clients.Destroy;
+      end;
+
+    'products' : begin
+        products:= TProducts.Create;
+        myDiv.appendChild( products.Get );
+        products.Destroy;
+      end;
+
+    'inventory' : begin
+        inventory:= TInventory.Create;
+        myDiv.appendChild( inventory.Get );
+        inventory.Destroy;
+      end;
+
+    'logout' : begin
+        logout:= THome.Create;
+        myDiv.appendChild( logout.Get );
+        logout.Destroy;
+      end;
+   end; 
 end; 
 
 destructor TApplication.Destroy;

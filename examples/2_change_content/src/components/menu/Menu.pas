@@ -64,7 +64,7 @@ end;
 
 procedure TMenu.HighlightMenuItem(id: string);
 var
-
+  //scoped procedure to help 
   procedure removeClass(currentValue : TJSNode; currentIndex: NativeInt; list : TJSNodeList);
   begin
     TJSElement(currentValue).classList.remove('active');

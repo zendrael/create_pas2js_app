@@ -1,9 +1,9 @@
 {
-  file:        Form.pas
+  file:        Products.pas
   description: component project source file
   source:      https://github.com/zendrael/create_pas2js_app
 }
-unit Form;
+unit Products;
 
 {$mode objfpc}{$H+}
 
@@ -17,7 +17,7 @@ uses
 
 type
 
-  TForm = class
+  TProducts = class
   private
     { private declarations }
     myDiv: TJSElement;
@@ -30,12 +30,12 @@ type
 
 implementation
 
-constructor TForm.Create;
+constructor TProducts.Create;
 begin
   myDiv:= document.createElement('div');
 end;
 
-function TForm.Get: TJSElement;
+function TProducts.Get: TJSElement;
 var 
   objHTML : TResourceInfo;
 begin
