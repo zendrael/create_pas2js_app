@@ -75,7 +75,7 @@ echo "| Starting local server at ${bold}http://localhost:3000${normal} |"
 echo "| (CTRL+C to quit server)                        |"
 echo " ------------------------------------------------"
 echo " "
-server -p 8080 -s -d dev
+server -p 3000 -s -d dev
 #enable watch
 # server -p 3000 -w -c main.lpr -d dev
 
