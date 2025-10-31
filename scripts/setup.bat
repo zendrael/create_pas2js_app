@@ -7,19 +7,8 @@ REM ############################################################################
 
 echo Setup Pas2JS...
 
-REM Define PAS2JSDIR using USERPROFILE, translating $HOME to %USERPROFILE%
-REM The path structure ".local\share\applications" is preserved as per original,
-REM though it's not a typical Windows path convention.
 SET "PAS2JSDIR=%LOCALAPPDATA%"
-
-REM The original script specifies a Linux download URL. If you are running this
-REM on Windows and intend to install the Windows version of Pas2JS, you might
-REM need to change this URL to:
-REM SET "PAS2JSZIP=https://getpas2js.freepascal.org/downloads/win64/pas2js-win64-current.zip"
-SET "PAS2JSZIP=https://getpas2js.freepascal.org/downloads/linux/pas2js-linux-x86_64-current.zip"
-
-REM macOS version (commented out as per original script)
-REM https://getpas2js.freepascal.org/downloads/darwin/pas2js-x86_64-current.zip
+SET "PAS2JSZIP=https://getpas2js.freepascal.org/downloads/windows/pas2js-win64-x86_64-current.zip"
 
 echo Checking installation...
 IF NOT EXIST "%PAS2JSDIR%\pas2js\" (

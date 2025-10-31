@@ -20,31 +20,32 @@
 ### On Windows
 
 - Access the project folder (root of project folder) from command line
-- Run the **setup.bat** script from `scripts\setup.bat`
+- Run the **setup.bat** script from `.\scripts\setup.bat`
 - If all goes well, it'll download pas2js to your `%LocalAppData%` folder
 - The dev and dist scripts are ready to use this folder structure
 
 ## Step 3: Open project and run from inside VScode
 
-- open project folder with VSCode (assuming you have VSCode installed)
-- install extension OmniPascal
-- open the terminal inside VSCode
-- **on Linux** compile dev with `./scripts/buildDev.sh`
-- **on Windows** compile dev with `scripts\buildDev.bat`
-- access dev project in your browser on address `http://localhost:8080`
-- **check your browser console to see if the project works**
+- Open project folder with VSCode (assuming you have VSCode installed)
+- Install extension OmniPascal
+- Open the terminal inside VSCode
+- **On Linux** compile dev with `./scripts/buildDev.sh`
+- **On Windows** compile dev with `.\scripts\buildDev.bat`
+- Access dev project in your browser on address `http://localhost:8080`
+- **Check your browser console to see if the project works**
 - CTRL+C on VScode terminal to stop the server
 
 ## Building a release
 
-- open terminal inside VScode
-- **on Linux** compile with `./scripts/buildDist.sh`
-- **on Windows** compile with `scripts\buildDist.bat`
-- access project on `dist` folder and upload to your server
+- Open terminal inside VScode
+- **On Linux** compile with `./scripts/buildDist.sh`
+- **On Windows** compile with `.\scripts\buildDist.bat`
+- Access project on `dist` folder and upload to your server
 
 ## How to compile the examples?
 
-- copy `public_html`, `src` and `ìndex.html` from inside the exemple you want to compile on top of the main `public_html`, `src` and `ìndex.html` overwriting them.
+- Copy `public_html`, `src` and `ìndex.html` from inside the exemple you want to compile on top of the main `public_html`, `src` and `ìndex.html` overwriting them.
+- Build the project
 
 ## Can I use this to create backend apps too?
 
