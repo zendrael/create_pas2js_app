@@ -42,6 +42,10 @@
 - **on Windows** compile with `scripts\buildDist.bat`
 - access project on `dist` folder and upload to your server
 
+## How to compile the examples?
+
+- copy `public_html`, `src` and `ìndex.html` from inside the exemple you want to compile on top of the main `public_html`, `src` and `ìndex.html` overwriting them.
+
 ## Can I use this to create backend apps too?
 
 - Yes! Altho you might need to edit the build scripts - they are all commented and easy to understand.
